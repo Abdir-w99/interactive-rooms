@@ -2,25 +2,25 @@ const rooms = [
   {
     name: "Hallway",
     image: "./assets/images/hallway.jpg",
-    description: "You are in the hallway.",
+    description: "You are in the hallway",
     options: ["Living room", "Bedroom"],
   },
   {
     name: "Kitchen",
     image: "./assets/images/kitchen.jpg",
-    description: "You are in the kitchen.",
+    description: "You are in the kitchen",
     options: ["Living room"],
   },
   {
     name: "Bedroom",
     image: "./assets/images/bedroom.jpg",
-    description: "You are in the bedroom.",
+    description: "You are in the bedroom",
     options: ["Hallway"],
   },
   {
     name: "Living room",
     image: "./assets/images/living-room.jpg",
-    description: "You are in the living room.",
+    description: "You are in the living room",
     options: ["Kitchen", "Hallway"],
   },
 ];
