@@ -17,3 +17,13 @@ body {
   object-fit: cover;
   border-radius: 10px;
 }
+
+button {
+  margin: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2f5f8f;
+  color: white;
+  cursor: pointer;
+}
