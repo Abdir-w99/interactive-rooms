@@ -2,39 +2,46 @@ const rooms = [
   {
     name: "Hallway",
     description: "You are in the hallway.",
+    options: ["Living room", "Bedroom"],
   },
   {
     name: "Kitchen",
     description: "You are in the kitchen.",
+    options: ["Living room"],
   },
   {
     name: "Bedroom",
     description: "You are in the bedroom.",
+    options: ["Hallway"],
   },
   {
     name: "Living room",
     description: "You are in the living room.",
+    options: ["Kitchen", "Hallway"],
   },
 ];
 
-let currentRoom = 0;
+let currentRoom = rooms[0];
 
 const description = document.querySelector("#description");
-const button = document.querySelector("#change-room");
+const buttons = document.querySelector("#buttons");
 
 function showRoom() {
-  description.textContent = rooms[currentRoom].description;
+  description.textContent = currentRoom.description;
 
-  button.textContent = "Go to next room";
+  buttons.innerHTML = "";
+
+  currentRoom.options.forEach((option) => {
+    const button = document.createElement("button");
+    button.textContent = `Go to ${option}`;
+
+    button.addEventListener("click", () => {
+      currentRoom = rooms.find((room) => room.name === option);
+      showRoom();
+    });
+
+    buttons.appendChild(button);
+  });
 }
-button.addEventListener("click", () => {
-  currentRoom++;
-
-  if (currentRoom === rooms.length) {
-    currentRoom = 0;
-  }
-
-  showRoom();
-});
 
 showRoom();
