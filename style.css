@@ -27,3 +27,7 @@ button {
   color: white;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: #244b73;
+}
